@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+    <title>Icoder technology</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alumni+Sans+Collegiate+One&family=Satisfy&family=Yeseva+One&display=swap');
+      a {
+        text-decoration: none;
+    }
+    
+
+body{
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
+}
+a {
+  text-decoration: none!important;
+}
+.receipt-wrap {
+    padding: 0.5rem;
+}
+.receipt_header {
+    text-align: center;
+}
+.receipt_header p {
+    margin-bottom: 0.2rem;
+}
+.receipt_details div {
+    display: inline-block;
+    width: 48%;
+}
+.table_head {
+    border-top: 1px dotted blue;
+    border-bottom: 1px dotted blue;
+}
+.receipt-wrap {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.footer {
+    padding: 0.5rem;
+    border-top: 1px dotted blue;
+    border-bottom: 1px dotted blue;
+}
+.receipt_header h5 {
+    font-size: 1rem;
+}
+
+div#lists {
+  /* height: 35vh; */
+    padding: 0.3rem;
+    background-color: #f9f9f9;
+    color: #6e4d4d;
+}
+.date{text-align: right;}
+/* div#printjewellery {
+        padding: 1rem 0.5rem;
+      background-color: #874c62;
+      }
+.printjewellery_wrap {
+    background-color: #d3d3c9;
+    padding: 0.3rem;
+}
+.company_text {
+    font-family: 'Markazi Text', serif;
+    margin-bottom: 1rem;
+}
+.billlogo_wrap img {
+    height: 110px;
+}
+.print_nameaddress {
+    padding-top: 0.9rem;
+}
+.print_nameaddress p {
+    font-size: 0.95rem;
+    line-height: 1rem;
+    margin-bottom: 0;
+    color: #874c62;
+}
+.company_text h5 {
+  font-size: 2.1rem;
+    font-weight: 600;
+    color: #874c62;
+    line-height: 1.8rem;
+} */
+.printjewellery_wrap .table_head {
+    background-color: #874c62;
+    color: #fff;
+}
+  .table_wrap {
+    border: 2px solid black;
+}
+.table_head p {
+    font-weight: 600;
+}
+.table_head p span {
+  font-size: 0.9rem;
+  text-align: center;
+
+}
+.table_total {
+    border-top: 2px solid #874c62;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    color: #874c62;
+}
+.tt_left {
+  padding: 0.5rem;
+    width: 60%;
+    border-right: 2px solid #874c62;
+    text-transform: capitalize;
+
+}
+.tt_right {
+    width: 40%;
+}
+.tt_right p , .tt_left p {
+    font-weight: 600;
+}
+.ttr_wrap {
+    border-bottom: 2px solid #874c62;
+    padding: 0.2rem;
+}
+.ttr_wrap p {
+    margin-bottom: 0.2rem;
+}
+.tt_right :last-child {
+    border: 0;
+}
+      /* .table_head {
+        background-color: red;
+      } */
+      .table_head p {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0.2rem;
+        font-weight: 400;
+      }
+      div#lists p {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0rem;
+      }
+      div#lists p:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      /* div#lists p a , .table_head a{
+        width: 24%;
+      } */
+      /* div#lists p a {
+        border-right: 2px solid #874c62;
+      } */
+      .print_header {
+        text-align: center;
+      }
+      .print_middle {
+        display: flex;
+        justify-content: space-between;
+      }
+      /* .pj_table {
+    background-color: #874c62;
+} */
+/* .pj_table_wrap {
+    border: 2px solid #874c62;
+} */
+
+      /* .w-25{
+        width: 25%;
+      }
+      .w-8 {
+        width: 8%;
+      }
+      .w-12 {
+        width: 12%;
+      }
+      
+      #lists p span {
+        text-align: center;
+        width: 8%;
+      }
+      #lists p span:nth-child(2) {
+        width: 25%;
+      }
+      #lists p span:nth-last-child(1) {
+        width: 12%;
+      } */
+      
+    </style>
+  </head>
+  <body >
+    <div class="receipt-wrap">
+      <div class="receipt_header">
+        <h5>Icoder Technology Pvt. ltd</h5>
+        <p>HakimChowk</p>
+        <p>VAT No: 111111</p>
+      </div>
+      <div class="receipt_details">
+        <div class="bill">BILL: <span id="billno"></span></div>
+        <div class="date">DATE: <span id="date"></span></div>
+        <div class="table">Table No: <span id="table"></span></div>
+      </div>
+      <div class="pj_table">
+        <div class="pj_table_wrap">
+          <div class="table_head">
+            <p>
+              <span >SN</span>
+              <span >DESCRIPTION</span>
+              <span >QTY</span>
+              <span >RATE</span>
+              <span >AMOUNT</span>
+            </p>
+          </div>
+          <div id="lists">
+
+          </div>
+          <div class="grandtotal">
+            <p>In words: <span id="total_word"></span> only</p>
+            <p>Total: <span id="total"></span></p> 
+          </div>
+          <div class="footer">
+            <p>Contact No: 056-525564</p>
+            <p>Thank You, Visit again</p>
+          </div>
+        
+      </div>
+
+      </div>
+    </div>
+         
+  </body>
+  <script >
+    window.addEventListener('load', () => {
+      const bc = new BroadcastChannel("test");
+        bc.onmessage = (event) => {
+          this.data = event.data;
+          // let list = event.data.fiscalYear
+          let items = event.data.orderList
+          console.log(event,'items')
+          // console.log(event.data.englishDate,'ed')
+
+
+          // let lists = null;
+          // document.getElementById("lists").innerHTML = ''
+          
+          document.getElementById("billno").innerHTML = `${event.data.billid}`
+          // document.getElementById("name").innerHTML = `${event.data.party_name}`
+          // document.getElementById("address").innerHTML = `${event.data.address}`
+          // document.getElementById("invoice").innerHTML = `${event.data.englishDate.toString().slice(0,15)}`
+          
+          document.getElementById("date").innerHTML = `${event.data.date.slice(0,10)}`
+          document.getElementById("total").innerHTML = `${event.data.totalprice}`
+          document.getElementById("table").innerHTML = `${event.data.table ? event.data.table : 'fastbilling'}`
+          document.getElementById("total_word").innerHTML = `${event.data.priceinword}`
+
+
+          for(let i = 0 ; i < items.length ; i++) {
+            
+            document.getElementById("lists").innerHTML +=
+            `<p><span>${i + 1}</span><span>${items[i].name}</span><span>${items[i].qty}</span><span>${items[i].price}</span><span>${items[i].qty * items[i].price}</span></p>`
+             
+          }
+        };
+
+    });
+  </script>
+</html>
